@@ -1,0 +1,1040 @@
+/* Created by u/The_Shield1212 
+   Khayee Athourayeh Gabareh */
+
+body {
+  background: url(%%background%%) no-repeat #1573FF;
+  background-size: 100% auto;
+  color: #444
+}
+
+/*HEADER-----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Header of the Subreddit (Where the slideshow appears)*/
+div#header {
+    animation: headerSlideshow 30s infinite;
+    height: 199px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+    background-image: url(%%ishtar-gate%%);
+    border: none;
+}
+
+/*Used to standardize element placement*/
+div#header-bottom-left {
+    height: 175px;
+    position: relative;
+}
+
+/*Slideshow animation for subreddit header*/
+@keyframes headerSlideshow {
+0%  { background-image:url(%%akkadian%%);
+    background-position: center left;}
+22% { background-image:url(%%akkadian%%);
+    background-position: center right;}
+25% { background-image:url(%%khigga%%);
+    background-position: center left;}
+47% { background-image:url(%%khigga%%);
+    background-position: center right;}
+50% { background-image:url(%%ishtar-gate%%);
+    background-position: center left;}
+72% { background-image:url(%%ishtar-gate%%);
+    background-position: center right;}
+75% { background-image:url(%%ishtar-gate%%);
+    background-position: center left;}
+100% { background-image:url(%%ishtar-gate%%);
+    background-position: center right;}
+}
+
+/*The little reddit icon, when clicked, takes you to the reddit home*/
+#header-img.default-header {
+    background-image: url(%%kikhwa%%);
+    background-position: 0px 0px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 20%;
+    left: 2%;
+    opacity: 0.4;
+    transition: 0.25s;
+}
+
+/*Gives the icon image a nice light up effect*/
+#header-img.default-header:hover {
+  opacity: 1;
+}
+
+/*Replace page name with image*/
+.hover.pagename.redditname a:after {
+    content: url(%%athor%%);
+}
+
+/*Position page name image*/
+.hover.pagename.redditname {
+    position: absolute;
+    left: 45%;
+    top: 25%;
+    font-size: 0px;
+}
+
+
+/*Background of width clip at the top of the page*/
+#sr-header-area {
+    background-color: rgba(0, 0, 0, .25);
+    border: none;
+    line-height: 25px;
+    height: 25px;
+    transition: 0.3s;
+}
+
+/*When width clip is hovered*/
+#sr-header-area:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+/*The text on the widthclip*/
+.sr-list ul li a, 
+.dropdown.srdrop span.selected.title,
+.drop-choices.srdrop.inuse a {
+    font-family: "Helvetica";
+    color: white;
+    opacity:0.8;
+    transition: 0.2s;
+}
+
+/*Spacing far left width clip with dropdown*/
+.sr-list ul:first-child li a:first-child {
+    border-left: 1px solid grey;
+    padding-left: 7px;
+}
+
+/*Highlight the hovered text on the width clip*/
+.sr-list ul li a:hover, 
+.dropdown.srdrop span.selected.title:hover,
+.drop-choices.srdrop.inuse a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+/*Don't over highlight selected subreddit on width clip*/
+.selected.title {
+    display: none;
+    visibility: hidden;
+}
+/*Add a custom drop down button, needs*/
+.dropdown.srdrop:before {
+    content: url(%%menu-button%%);
+}
+/*Add a custom drop down button*/
+.dropdown.srdrop {
+    width: 15px;
+    height: 15px;
+    padding-top: 3px;
+    margin-right: 12px;
+    opacity: 0.8;
+}
+
+/*Drop down item hover*/
+.dropdown.srdrop:hover  {
+    cursor: pointer;
+    opacity: 1;
+}
+
+/*Removal of edit button on the top right*/
+#sr-more-link {
+    display: none;
+}
+
+/* Removal of new Reddit button because no one likes that */
+.redesign-beta-optin {
+    display: none;
+}
+
+/*Drop down placement*/
+.drop-choices.srdrop.inuse {
+    top: 25px !important;
+    left: -5px !important;
+    background-color: rgba(0,0,0,0.6);
+    line-height: 20px;
+}
+
+/*Drop down hover*/
+.drop-choices.srdrop.inuse a:hover {
+    background-color: rgba(0,0,0,1);
+}
+
+/*Mail icons*/
+#mail,
+#modmail {
+    position: relative;
+    display: inline-block;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 32px; 
+    height: 32px;
+    transition:all .3s ease-out;
+    opacity: 0.8;
+}
+
+#header-bottom-right a.message-count {
+    display: none;
+}
+
+/*Position mail icons*/
+#mail:hover,
+#modmail:hover {
+    transform:translate(0px,-3px);
+    opacity: 1;
+}
+
+/*Have mail image*/
+#mail.havemail {
+    background:url(%%mail%%);
+    margin-bottom: -10px;
+}
+
+/*No mail image*/
+#mail.nohavemail {
+    background:url(%%no-mail%%);
+    margin-bottom: -10px;
+}
+
+/*Have mod mail image*/
+#modmail.havemail,
+#new_modmail.havemail {
+    background:url(%%mod-mail%%);
+    margin-bottom: -14px;
+}
+
+a#new_modmail.nohavemail.access-required,
+a#new_modmail.havemail.access-required {
+    display: none;
+}
+
+/*No mod mail image*/
+#modmail.nohavemail {
+    background:url(%%no-mod-mail%%);
+    margin-bottom: -14px;
+}
+
+/*Other items on bottom right of header*/
+.logout a,
+#header-bottom-right ul.flat-list.hover li a,
+#chat,
+.user a {
+    display:inline-block;
+    height:32px; 
+    text-indent:-99999em;
+    width:32px; 
+    overflow:hidden;
+    transition:all .3s ease-out;
+    opacity: 0.8;
+}
+
+.login-required.login-link {
+    background:url(%%login%%) 0 0 no-repeat;
+    margin-bottom: -5px;
+}
+
+/*Signup Button on HomeHub*/
+.user a:nth-child(2) {
+    background:url(%%signup%%) 0 0 no-repeat;
+    margin-left: 15px;
+    margin-bottom: -5px;
+}
+
+#header-bottom-right ul.flat-list.hover li a[href="javascript:void(0)"] {
+    margin-left: 8px;
+    margin-bottom: -5px;
+}
+
+.logout a {
+    background:url(%%logout%%) 0 0 no-repeat;
+    margin-bottom: -11px;
+}
+
+#header-bottom-right ul.flat-list.hover li a {
+    background:url(%%settings%%) 0 0 no-repeat;
+    margin-bottom: -11px;
+}
+
+#chat {
+    background:url(%%chat%%) 0 0 no-repeat;
+    margin-bottom: 2px;
+}
+
+#chat.active {
+    background:url(%%chat-active%%) 0 0 no-repeat;
+    margin-bottom: 2px;
+}
+
+.user a:after{
+    content: "Profile";
+    color: black;
+    display:none;
+    bottom: 5%;
+    background-color: #fef4c5;
+    border: 1px solid #d4b943;
+    border-radius: 2px;
+    font-size: 12px;
+}
+.user a:hover:after{
+    display: block;
+}
+
+.user a {
+    background:url(%%profile%%) 0 0 no-repeat;
+    margin-bottom: -10px;
+ }
+
+.logout a:hover,
+#header-bottom-right ul.flat-list.hover li a:hover,
+#chat:hover,
+.user a:hover {
+    transform:translate(0px,-3px);
+    opacity: 1;
+}
+
+/*Hide span separators on bottom right header*/
+div#header-bottom-right > .separator
+{
+    display:none;
+}
+
+.logout a,
+#header-bottom-right ul.flat-list.hover li a,
+#chat,
+#mail,
+#modmail {
+    margin-left: 15px;
+}
+
+#header-bottom-right {
+    background-color: rgba(255,255,255,0.25);
+    transition: 0.5s;
+}
+
+#header-bottom-right:hover {
+    background-color: rgba(255,255,255,1);
+    border-radius: 15px;
+}
+
+.user {
+    font-size: 0px;
+}
+
+ul.tabmenu {
+   position: absolute;
+   left: 50%;
+   top: 103%;
+   transform: translateX(-50%);  
+}
+
+ul.tabmenu li a,
+ul.tabmenu li.selected a {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 'serif';
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #000000;
+    transition: 0.4s ease-in-out;
+    padding: 10px 10px;
+    margin: 0 -3px;
+}
+
+ul.tabmenu li.selected a {
+    padding-bottom: 7px;
+}
+
+ul.tabmenu li.selected a {
+    border-bottom: 3px solid red;
+}
+
+ul.tabmenu li a:hover,
+ul.tabmenu li.selected a:hover
+ul {
+    background-color: rgba(0,0,0, 0.85);
+}
+
+/*MAIN HUB -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+div.content {
+    transform: translateY(34px);
+    background-color: white;
+    margin-left: 25px;
+    margin-right: 330px;
+    padding-left: 25px;
+    box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+#siteTable {
+    margin-left: -20px;
+    margin-right: 30px;
+    padding: 10px 0px;
+}
+
+
+.thing {
+    padding: 10px 0px;
+}
+
+.thing:hover {
+    background-color: rgba(0,0,0,0.10);
+}
+
+.rank {
+    display: none;
+}
+
+/*SIDEBAR----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.side {
+    transform: translateY(41px);
+    overflow: hidden;
+    margin-right: 30px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+/*Add Image to Sidebar*/
+div.side div.spacer:nth-of-type(1){
+    padding-top: 300px;
+    background:url(%%alqosh%%) top center no-repeat;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+/*Optional- adds a caption under that image*/
+div.side div.spacer:nth-of-type(1):before{
+    display:block;
+    margin-top: 10px;
+    width: 300px;
+    content: "Assyrian Village of the Week: Alqosh";
+    padding: 0 0 10px;
+    font-family: Georgia, serif; 
+    font-size: medium; 
+} 
+
+/*Search Bar on the Sidebar*/
+.side #search input[type=text] {
+  text-align: center;
+  border: 1px solid #CCC;
+  padding: 10.5px;
+  width: 100%;
+}
+
+#searchexpando {
+    border: 1px solid #CCC;
+    background-color: #fdfdfd;
+    font-family: 'serif';
+}
+
+
+#searchexpando a {
+    transition: .2s;
+}
+
+#searchexpando p {
+    text-align: center;
+}
+
+#searchexpando a:hover {
+    color: #0078ff;
+}
+
+.nub {
+    display: none;   
+}
+
+.morelink {
+    width: 87%;
+    margin-left: 20px;
+    background-color: #3083FF;
+    background-image: none;
+    padding: 7px 0px;
+    border: none;
+    transition: .2s ease-in-out;
+    font-size: 15px;
+}
+
+.morelink a {
+    color: white;
+    font-family: 'serif';
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.morelink:hover {
+    background-image: none;
+    background-color: #2b6ed2;
+}
+
+h1.hover.redditname {
+    width: 87%;
+    margin-left: 20px;
+    text-align: center;
+}
+
+h1.hover.redditname a {
+    padding: 0px 7.5%;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #7f5400;
+    color: #7f5400;
+    text-transform: uppercase;
+    font-family: 'sans-serif';
+    letter-spacing: 1px;
+    font-size: 24px;
+    font-weight: 100;
+    transition: .2s ease-in-out;
+}
+
+h1.hover.redditname a:hover {
+    color: #D99E30;
+    text-decoration: none;
+}
+
+.fancy-toggle-button.subscribe-button {
+    font-family: 'serif';
+    border: none;
+    position: relative;
+    left: 33%;
+    margin: 15px 0px !important;
+}
+
+/*Unsubscribe Button*/
+.fancy-toggle-button.subscribe-button a {
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'serif';
+    border-radius: 0px;
+    background-color: #db1e1e;
+    background-image: none;
+    transition: .2s ease-in-out;
+}
+
+.fancy-toggle-button.subscribe-button a:hover {
+    background-color: #b01d1d;
+}
+
+/*Subscribe Button*/
+a.option.add.active {
+    background-color: green;
+    transition: .2s ease-in-out; 
+    position: relative;
+    left: 6.5%;
+}
+
+a.option.add.active:hover {
+    background-color: #005e00;
+}
+
+
+
+.subscribers.number,
+.subscribers.word {
+    text-align: right;
+}
+
+.users-online {
+    position: relative;
+    margin-top: -14px;
+    left: 6%;
+}
+
+
+.subscribers {
+    position: relative;
+    display: block;
+    text-align: right;
+    right: 20px;
+}
+
+.leavemoderator,
+.leavecontributor-button {
+    position: relative;
+    width: 87%;
+    font-size: 12.5px;
+    font-family: 'serif';
+    left: 6.5%;
+    text-align: center;
+}
+
+.titlebox .tagline { font-size: 0; }
+.titlebox .tagline > * { font-size: x-small; }
+.side .tagline a:first-child {
+    display: inline-block;
+    font-size: small!important;
+    padding-left: 5px;
+    position: relative;
+    top: -2.5px;
+    left: 6.5%;
+}
+
+.side .tagline .flair {
+    position: relative;
+    top: -1px;
+    left: 6.5%;
+}
+
+.flairselectbtn.access-required {
+    display: block;
+    width: 93.5%;
+    color: #FFF;
+    padding: 13.5px 0px;
+    background-color: #3083FF;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'serif';
+    font-size: 20px;
+    transition: .2s ease-in-out;
+}
+
+
+.flairselectbtn.access-required:after {
+    content: ' your flair';
+}
+
+.flairselectbtn.access-required:hover {
+    text-decoration: none;
+    background-color: #2b6ed2;
+}
+
+div.flairselector.drop-choices.active:hover {
+    border-color: #2b6ed2 !important;
+}
+
+form.toggle label {
+    display: none;
+}
+
+form.toggle.flairtoggle {
+    display: inline-block;
+    float: left;
+    position: relative;
+    left: 6.5%;
+}
+
+input#flair_enabled {
+    position: relative;
+    top: 5% !important;
+}
+
+form.toggle.flairtoggle::after {
+    content: 'Choose your Flair! - ';
+    color: #3083FF;
+    font-family: 'serif';
+    font-weight: 800;
+    font-size: larger;
+}
+
+.flairtoggle input {
+}
+
+/*Flair Selector Box*/
+.flairselector {
+    position: relative;
+    top: 20%!important;
+    left: 0%!important;
+    margin: 0px 0px;
+    padding: 0px!important;
+    width: 248px!important;
+    border: 7px solid #307BFF !important;
+    box-shadow: 0 0 16px rgba(0,0,0,0.12);
+    background-color: #e7e7e7;
+    max-height: 350px;
+}
+
+.flairselector button {
+    font-family: 'serif';
+    color: white;
+    background-color: #307BFF;
+    font-size: 16px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+
+.flairselector button:hover {
+    background-color: #2b6ed2;
+}
+
+.flairselector div.customizer.texteditable {
+    display: none;
+}
+
+.flairoptionpane ul,
+.flairoptionpane ul li {
+    width: 110px !important;
+}
+
+/*Search Posts by Flair*/ 
+.md p strong:first-child {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/*The flair options' parent*/
+.md p {
+    position: relative;
+    text-align: center;
+    width: 87%;
+    left: 7%;
+}
+
+/*The flair options*/
+.md p a {
+    position: relative;
+    display: inline-block;
+    background-color: black;
+    padding: 10px 10px;
+    margin: 2px 0px;
+    text-align: center;
+    color: white;
+    font-family: 'serif';
+    font-weight: 800;
+    transition: .2s ease-in-out;
+}
+
+/*Announcements*/
+.md p a:nth-child(3)  {background-color: #76838F;}
+.md p a:nth-child(4)  {background-color: #9660FF;}
+.md p a:nth-child(5)  {background-color: #008CFF;}
+.md p a:nth-child(6)  {background-color: #FF728B;}
+.md p a:nth-child(7)  {background-color: #FF5959;}
+.md p a:nth-child(8)  {background-color: #1DB9C0;}
+.md p a:nth-child(9)  {background-color: #1CAE8C;}
+.md p a:nth-child(10) {background-color: red;}
+.md p a:nth-child(11) {background-color: #FF7D60;}
+.md p a:nth-child(12) {background-color: #31C800;}
+.md p a:nth-child(13) {background-color: saddlebrown;}
+.md p a:nth-child(14) {background-color: #5966FF;}
+
+.md p a:hover {
+    opacity: 0.5;
+}
+
+/*Hide Subreddit Creator*/
+.bottom span.flair {display: none;}
+.titlebox .bottom { font-size: 0; text-align: center; }
+.bottom .age { float: none; font-size: x-small; } 
+
+
+/*Changing the word moderators on top of the list of moderators box*/  
+.sidecontentbox .helplink + .title h1 { font-size: 0}
+.sidecontentbox .helplink + .title h1:before { font-size: small; content: "ܡܠܟ̈ܐ / Moderators" }  
+
+.sidebox.create div.morelink {
+    display: none !important;
+}
+
+.sidecontentbox .collapse-button {
+    display: none;
+
+}
+
+.sidecontentbox .title:first-child h1 {
+    display: block;
+    background-color:#3083FF;
+    color:#fff;
+    padding: 16px 0px;
+    transition: .2s ease-in-out;
+    margin-left: 20px;
+    width: 87%;
+    text-align: center;
+    font-family: 'serif';
+    font-size: 16px;
+}
+
+.sidecontentbox .title:first-child h1:hover {
+    background-color: #2b6ed2;
+}
+
+.sidecontentbox .content {
+    background-color: #7fb2ff;
+    border: none;
+    width: 87%;
+    margin-left: 20px;
+}
+
+.sidecontentbox .content li a {
+    display: block;
+    border-left: 3px solid #3083FF;
+    color: #fff;
+    background: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s ease-in-out;
+    padding: 7px 7px;
+    margin-top: -5px;
+}
+
+.sidecontentbox .content li a:hover {
+    border-left: 15px solid #3083FF;
+    background-color: #61a0ff;
+}
+
+.sidecontentbox .content {
+    padding: 0px 0px;
+}
+
+.sidebox.create {
+    display: none;
+}
+
+/* VOTE ARROWS --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/ 
+
+.arrow.up {
+    background: url(%%up-arrow%%); 
+    opacity: 0.5;
+    transition: .2s ease-in-out;
+}
+
+
+.arrow.upmod { 
+    background: url(%%up-arrow-selected%%); 
+}
+
+.arrow.down {
+    background: url(%%down-arrow%%); 
+    opacity: 0.5;
+    transition: .2s ease-in-out;
+}
+
+.arrow.downmod { 
+    background: url(%%down-arrow-selected%%); 
+}
+
+.arrow.up:hover,
+.arrow.down:hover {
+    opacity: 1;
+}
+
+/*This allows arrows wider than just 15px*/
+.midcol  { min-width:30px !important; }
+
+
+.thing .arrow {
+    height: 22px;
+    width: 30px;
+}
+/*FLAIRS------------------------------------------------------------------------------*/
+
+.flair {
+    background: url(%%spritesheet-flairs%%) no-repeat -9999px;
+    border: 0;
+    padding: 0; 
+}
+
+.flair-Assyrian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -5px -5px;
+}
+
+.flair-Australian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -31px -5px;
+}
+
+.flair-Belgian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -57px -5px;
+}
+
+.flair-British {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -83px -5px;
+}
+
+.flair-Canadian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -5px -26px;
+}
+
+.flair-Catholic-Assyrian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -31px -26px;
+}
+
+.flair-Dutch {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -57px -26px;
+}
+
+.flair-French {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -83px -26px;
+}
+
+.flair-Georgian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -5px -47px;
+}
+
+.flair-German {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -31px -47px;
+}
+
+.flair-Greek {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -57px -47px;
+}
+
+.flair-Iranian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -83px -47px;
+}
+
+.flair-Iraqi {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -5px -68px;
+}
+
+.flair-Israeli {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -31px -68px;
+}
+
+.flair-Italian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -57px -68px;
+}
+
+.flair-Jordanian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -83px -68px;
+}
+
+.flair-Kurdish {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -5px -89px;
+}
+
+.flair-Lebanese {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -31px -89px;
+}
+
+.flair-Orthodox-Assyrian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -57px -89px;
+}
+
+.flair-Russian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -83px -89px;
+}
+
+.flair-Syrian {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -109px -5px;
+}
+
+.flair-Turkish {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -109px -26px;
+}
+
+.flair-USA {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -109px -47px;
+}
+
+.flair-Yezidi {
+    width: 16px;
+    min-width: 16px;
+    text-indent: 19px;
+    height: 11px;
+    background-position: -109px -68px;
+}
+
+/*FOOTER---------------------------------------------------------------------------*/
+
+.footer .col {
+    background-color: white;
+}
+
+
+/*STYLESHEET-----------------------------------------------------------------------*/
+
+.stylesheet-customize-container {
+    padding-top: 1px;
+}
